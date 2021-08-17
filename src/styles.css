@@ -16,8 +16,9 @@ body {
 
 .content {
   min-height: 70%;
-
   padding: 1em 0.5em;
+  /* font-size: min(9vw + 0.3rem, 2.5rem); */
+
   border-radius: 15px;
   border: 2px solid grey;
 }

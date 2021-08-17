@@ -16,10 +16,7 @@ export default function App() {
     "👍": "Thumbs up"
   };
 
-  let keyData = [];
-  for (let keys of Object.keys(emojiData)) {
-    keyData.push(keys);
-  }
+  let keyData = Object.keys(emojiData);
 
   const inputChange = (event) => {
     let input = event.target.value;
@@ -34,6 +31,10 @@ export default function App() {
       setMeaning("");
     }
   };
+  const emojiClicked = (data) => {
+    // console.log(data.target.innerText);
+    setMeaning(emojiData[data]);
+  };
 
   return (
     <main>
@@ -42,7 +43,11 @@ export default function App() {
           <h2>Find Meaning of Emojis</h2>
           <div className="grid eDisplay">
             {keyData.map((data) => {
-              return <h3 className="ed">{data}</h3>;
+              return (
+                <h3 key={data} onClick={() => emojiClicked(data)}>
+                  {data}
+                </h3>
+              );
             })}
           </div>
           <input type="text" onChange={inputChange} placeholder="Paste Emoji" />
