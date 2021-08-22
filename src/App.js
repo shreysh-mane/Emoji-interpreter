@@ -13,7 +13,7 @@ export default function App() {
     "😕": "Confused",
     "👑": "Crown",
     "🤣": "Laughing Hard",
-    "👍": "Thumbs up"
+    "👍": "Thumbs up",
   };
 
   let keyData = Object.keys(emojiData);
